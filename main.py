@@ -235,7 +235,7 @@ if __name__ == "__main__":
     else:
         device = torch.device('cpu')
         print('The code uses CPU!!!')
-    trains, tests = CV.get_cv(cv=args.cv, n_repeats=1, inc_matrix=df)
+    trains, tests = CV.get_cv(cv=args.cv, n_repeats=20, inc_matrix=df)
     for i in range(len(trains)):
         lr, L2 = args.lr, args.L2
         train_index = index_fea(trains[i], col=df.shape[1])
